@@ -28,6 +28,10 @@ jobs:
     - name: 4. Ejecutar comandos de despliegue en el servidor
       run: |
         ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+          # ¡Línea clave! Carga NVM en la sesión no interactiva
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
           # Navegar al directorio de la aplicación
           cd /home/ubuntu/app-backend
 
