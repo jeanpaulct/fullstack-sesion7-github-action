@@ -11,6 +11,10 @@ app.get('/galletas', function(req, res) {
   res.json({ mensaje: '¡A comer galletas!' })  
 })
 
+app.get('/gaseosas', function(req, res) {
+  res.json({ mensaje: '¡A beber gaseosas!' })  
+})
+
 app.post('/', function(req, res) {
   res.json({ mensaje: 'Método post' })   
 })
